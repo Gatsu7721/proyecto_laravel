@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class PersonaController extends Controller
 {
-    public function listarPersonas(){
+    public function listarPersona(){
         try{
             DB::connection()->getPdo();
             toast('Success Toast','success');
@@ -72,5 +72,11 @@ class PersonaController extends Controller
         
         //dd($personas);
         return view('lista-personas',compact('personas'));
+    }
+
+    public function mostrarPersona(Request $request, $id_persona){
+        //dd($request);
+
+        return view('mostrar-persona', compact('id_persona'));
     }
 }

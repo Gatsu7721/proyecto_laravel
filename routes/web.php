@@ -22,4 +22,5 @@ Route::get('/nueva-ruta', function () {
     return view('vistaDos');
 });
 
-Route::get('/lista-personas', [PersonaController::class,'listarPersonas']);
+Route::get('/lista-personas', [PersonaController::class,'listarPersona'])->name('lista-personas');
+Route::get('/lista-personas/{id_persona}',[PersonaController::class,'mostrarPersona'])->name('mostrar-persona');
